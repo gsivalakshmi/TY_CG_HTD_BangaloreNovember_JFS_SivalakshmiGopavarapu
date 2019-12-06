@@ -1,0 +1,4 @@
+create table stud(
+	stud_name char(20),
+	stud_rno int(15),
+	stud_email(20));
