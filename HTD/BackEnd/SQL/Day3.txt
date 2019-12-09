@@ -1,0 +1,87 @@
+SQL> ED
+Wrote file afiedt.buf
+
+  1  SELECT *
+  2  FROM EMP
+  3  WHERE SAL > (SELECT SAL
+  4  		FROM EMP
+  5* 		WHERE ENAME='SCOTT')
+SQL> /
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO                                   
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------                                   
+      7839 KING       PRESIDENT            17-NOV-81       5000                    10                                   
+
+SQL> ED
+Wrote file afiedt.buf
+
+  1  SELECT *
+  2  FROM EMP
+  3  WHERE SAL >=(SELECT SAL
+  4  		FROM EMP
+  5* 		WHERE ENAME='SCOTT')
+SQL> /
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO                                   
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------                                   
+      7788 SCOTT      ANALYST         7566 19-APR-87       3000                    20                                   
+      7839 KING       PRESIDENT            17-NOV-81       5000                    10                                   
+      7902 MOM        ANALYST         7566 03-DEC-81       3000                    20                                   
+
+SQL> ED
+Wrote file afiedt.buf
+
+  1  SELECT DNAME
+  2  	FROM DEPT
+  3         WHERE DEPTNO =(SELECT DEPTNO
+  4                          FROM EMP
+  5  			WHERE SAL >(SELECT SAL
+  6  					FROM EMP
+  7* 					WHERE ENAME='SCOTT'))
+SQL> /
+
+DNAME                                                                                                                   
+--------------                                                                                                          
+ACCOUNTING                                                                                                              
+
+SQL> ED
+Wrote file afiedt.buf
+
+  1  SELECT MAX(SAL)
+  2  FROM EMP
+  3  WHERE SAL <(SELECT MAX(SAL)
+  4  		FROM EMP
+  5  		WHERE SAL <(SELECT MAX(SAL)
+  6* 				FROM EMP))
+  7  /
+
+  MAX(SAL)                                                                                                              
+----------                                                                                                              
+      2975                                                                                                              
+
+SQL> ED
+Wrote file afiedt.buf
+
+  1  SELECT MAX(SAL)
+  2  FROM EMP
+  3  WHERE SAL <(SELECT MAX(SAL)
+  4  		FROM EMP
+  5  		WHERE SAL <(SELECT MAX(SAL)
+  6  				FROM EMP
+  7  				WHERE SAL <(SELECT MAX(SAL)
+  8  						FROM EMP
+  9  						WHERE SAL <(SELECT MAX(SAL)
+ 10  								FROM EMP
+ 11  								WHERE SAL <(SELECT MAX(SAL)
+ 12  										FROM EMP
+ 13  										WHERE SAL <(SELECT MAX(SAL)
+ 14  												FROM EMP
+ 15  												WHERE SAL <(SELECT MAX(SAL)
+ 16* 														FROM EMP)))))))
+ 17  /
+
+  MAX(SAL)                                                                                                              
+----------                                                                                                              
+      1300                                                                                                              
+
+SQL> SPOOL OFF

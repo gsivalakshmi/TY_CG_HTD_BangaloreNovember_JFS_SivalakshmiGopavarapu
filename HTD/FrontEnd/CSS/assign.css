@@ -1,0 +1,31 @@
+ a{
+    text-decoration: none;
+    display: inline;
+    padding: 5px;
+ }
+  img{
+    padding: 20px;
+    border: 3px solid rebeccapurple;
+   
+    border-radius: 180px;
+    align-content: center;
+    align-items: center;
+    
+   }
+ h2{
+     text-align: center;
+     letter-spacing: 20%;
+ }
+ h1{
+     text-align: center;
+     letter-spacing: 30px;
+     padding: 45px;
+ }
+ .one , .two{
+     float: right;
+ }
+ table{
+     padding: 70px;
+    border: 1px solid black;
+}
+ 

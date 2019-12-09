@@ -1,0 +1,6 @@
+SQL> SELECTION:-
+> SELECT */[DISTINCT] COLUMN-NAME/EXPRESSION [ALIAS]
+SP2-0734: unknown command beginning "SELECTION:..." - rest of line ignored.
+SQL> FROM TABLE-NAME
+SP2-0734: unknown command beginning "FROM TABLE..." - rest of line ignored.
+SQL> SPOOL OFF

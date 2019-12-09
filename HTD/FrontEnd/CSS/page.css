@@ -1,0 +1,26 @@
+img{
+    border: 2px solid blueviolet;
+    
+    box-shadow: 0 0 12px rgb(28, 139, 0);
+}
+
+*{
+    color: red;
+}
+.demo li{
+    color: royalblue;
+    list-style: none;
+    display: inline-block;
+}
+.one , .two{
+    text-shadow: 4px 2px rebeccapurple;
+}
+#test{
+
+}
+ img{
+    padding: 20px;
+    border: 3px solid rebeccapurple;
+    margin: 30px;
+    border-radius: 20%;
+ }

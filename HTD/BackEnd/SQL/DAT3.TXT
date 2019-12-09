@@ -1,0 +1,52 @@
+SQL> SELECT DEPTNO
+  2  FROM EMP
+  3  GROUP BY DEPTNO;
+
+    DEPTNO                                                                                                              
+----------                                                                                                              
+        30                                                                                                              
+        20                                                                                                              
+        10                                                                                                              
+
+SQL> ED
+Wrote file afiedt.buf
+
+  1  SELECT DEPTNO
+  2  FROM EMP
+  3  GROUP BY DEPTNO,SAL
+  4* HAVING SAL * MAX(SAL)
+SQL> /
+HAVING SAL * MAX(SAL)
+                    *
+ERROR at line 4:
+ORA-00920: invalid relational operator 
+
+
+SQL> ED
+Wrote file afiedt.buf
+
+  1  SELECT DEPTNO
+  2  FROM EMP
+  3  GROUP BY DEPTNO,SAL
+  4* HAVING SAL = MAX(SAL)
+SQL> /
+
+    DEPTNO                                                                                                              
+----------                                                                                                              
+        10                                                                                                              
+        20                                                                                                              
+        20                                                                                                              
+        10                                                                                                              
+        30                                                                                                              
+        20                                                                                                              
+        30                                                                                                              
+        20                                                                                                              
+        10                                                                                                              
+        30                                                                                                              
+        30                                                                                                              
+        30                                                                                                              
+
+12 rows selected.
+
+SQL> CL SCR
+SQL> SPOOL "C:\Users\MR DELL\Desktop\SQL CG\DAY3.TXT"

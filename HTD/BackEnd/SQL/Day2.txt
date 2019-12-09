@@ -1,0 +1,100 @@
+SQL> select sal*12
+  2  from emp;
+
+    SAL*12                                                                                                              
+----------                                                                                                              
+      9600                                                                                                              
+     19200                                                                                                              
+     15000                                                                                                              
+     35700                                                                                                              
+     15000                                                                                                              
+     34200                                                                                                              
+     29400                                                                                                              
+     36000                                                                                                              
+     60000                                                                                                              
+     18000                                                                                                              
+     13200                                                                                                              
+     11400                                                                                                              
+     36000                                                                                                              
+     15600                                                                                                              
+
+14 rows selected.
+
+SQL> select distinct empno,ename,sal,job
+  2  from emp;
+
+     EMPNO ENAME             SAL JOB                                                                                    
+---------- ---------- ---------- ---------                                                                              
+      7369 S_MITH            800 CLERK                                                                                  
+      7698 BLAKE            2850 MANAGER                                                                                
+      7839 KING             5000 PRESIDENT                                                                              
+      7844 TURNER           1500 Salesman                                                                               
+      7902 MOM              3000 ANALYST                                                                                
+      7499 ALLE_N           1600 Salesman                                                                               
+      7782 CLARK            2450 MANAGER                                                                                
+      7788 SCOTT            3000 ANALYST                                                                                
+      7521 WARD_            1250 Salesman                                                                               
+      7566 JONES            2975 MANAGER                                                                                
+      7654 MARTIN           1250 Salesman                                                                               
+      7900 JAMES             950 CLERK                                                                                  
+      7876 ADAMS            1100 CLERK                                                                                  
+      7934 MILLER           1300 CLERK                                                                                  
+
+14 rows selected.
+
+SQL> select sal *12 as annual-salary
+  2  from emp;
+select sal *12 as annual-salary
+                        *
+ERROR at line 1:
+ORA-00923: FROM keyword not found where expected 
+
+
+SQL> SELECT SAL*12 AS ANNUAL-SALARY
+  2  
+SQL> 
+SQL> SELECT SAL*12 AS ANNUAL_SALARY
+  2  FROM EMP;
+
+ANNUAL_SALARY                                                                                                           
+-------------                                                                                                           
+         9600                                                                                                           
+        19200                                                                                                           
+        15000                                                                                                           
+        35700                                                                                                           
+        15000                                                                                                           
+        34200                                                                                                           
+        29400                                                                                                           
+        36000                                                                                                           
+        60000                                                                                                           
+        18000                                                                                                           
+        13200                                                                                                           
+        11400                                                                                                           
+        36000                                                                                                           
+        15600                                                                                                           
+
+14 rows selected.
+
+SQL> SELECT SAL*12 AS "ANNUAL SALARY"
+  2  FROM  EMP;
+
+ANNUAL SALARY                                                                                                           
+-------------                                                                                                           
+         9600                                                                                                           
+        19200                                                                                                           
+        15000                                                                                                           
+        35700                                                                                                           
+        15000                                                                                                           
+        34200                                                                                                           
+        29400                                                                                                           
+        36000                                                                                                           
+        60000                                                                                                           
+        18000                                                                                                           
+        13200                                                                                                           
+        11400                                                                                                           
+        36000                                                                                                           
+        15600                                                                                                           
+
+14 rows selected.
+
+SQL> SPOOL OFF
