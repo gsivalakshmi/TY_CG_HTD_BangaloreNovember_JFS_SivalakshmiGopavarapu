@@ -1,0 +1,25 @@
+.div{
+    float: left;
+}
+body{
+text-align:center;
+ width:100%;
+ margin:0 auto;
+ padding:0px;
+ font-family:"lucida grande",tahoma,verdana,arial,sans-serif;
+ background: linear-gradient(white, #D3D8E8);
+}
+.div1{
+ margin-top:30px;
+ width:590px;
+ text-align:right;
+
+}
+.footer{
+ color:royalblue;
+ display:inline-block;
+ margin:5px;
+ margin-left:0px;
+ min-width:80px;
+ text-decoration:none;
+}
